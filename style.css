@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+}
+
+h1, h2 {
+    color: #343a40;
+}
+
+#menu {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.item {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.item:hover {
+    transform: scale(1.05);
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#pedido-lista {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+#pedido-lista li {
+    background: #e9ecef;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#pedido-lista button {
+    background-color: #dc3545;
+    padding: 5px;
+    font-size: 14px;
+}
+
+#pedido-lista button:hover {
+    background-color: #c82333;
+}
+
+#total {
+    font-size: 20px;
+    font-weight: bold;
+    color: #28a745;
+}
+
+#mensaje-confirmacion {
+    font-size: 18px;
+    color: green;
+    margin-top: 15px;
+    font-weight: bold;
+}

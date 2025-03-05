@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos Cafetería</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Menú de la Cafetería</h1>
+    <div id="menu">
+        <div class="item">
+            <span>Sandwich - $3.00</span>
+            <button onclick="agregarPedido('Sandwich', 3.00)">Agregar</button>
+        </div>
+        <div class="item">
+            <span>Jugo - $1.50</span>
+            <button onclick="agregarPedido('Jugo', 1.50)">Agregar</button>
+        </div>
+        <div class="item">
+            <span>Café - $2.00</span>
+            <button onclick="agregarPedido('Café', 2.00)">Agregar</button>
+        </div>
+    </div>
+    
+    <h2>Tu Pedido</h2>
+    <ul id="pedido-lista"></ul>
+    <p>Total: $<span id="total">0.00</span></p>
+    <button onclick="confirmarPedido()">Confirmar Pedido</button>
+    <p id="mensaje-confirmacion" style="display: none; font-weight: bold;"></p>
+
+<!-- Importar Firebase versión compatible con scripts en el navegador -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+<!-- Tu archivo script.js debe cargarse después de Firebase -->
+<script src="script.js"></script>
+
+
+</body>
+</html>
