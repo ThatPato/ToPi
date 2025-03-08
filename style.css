@@ -1,86 +1,79 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
-    text-align: center;
+    margin: 20px;
     padding: 20px;
-    margin: 0;
+    background-color: #f8f8f8;
 }
 
-h1, h2 {
-    color: #343a40;
+h1 {
+    text-align: center;
+    color: #333;
 }
 
-#menu {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-top: 20px;
-}
-
-.item {
+.menu-section {
     background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    width: 200px;
-    text-align: center;
-    transition: transform 0.3s ease;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.item:hover {
-    transform: scale(1.05);
-}
-
-button {
+h2 {
     background-color: #007bff;
     color: white;
-    border: none;
     padding: 10px;
-    border-radius: 5px;
+    margin: 0;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    text-align: center;
 }
 
-button:hover {
+h2:hover {
     background-color: #0056b3;
 }
 
-#pedido-lista {
+.menu-items {
     list-style: none;
     padding: 0;
-    margin-top: 20px;
+    margin: 0;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease-out;
 }
 
-#pedido-lista li {
-    background: #e9ecef;
+li {
+    background: #fff;
     margin: 5px;
     padding: 10px;
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
 }
 
-#pedido-lista button {
-    background-color: #dc3545;
-    padding: 5px;
-    font-size: 14px;
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
 }
 
-#pedido-lista button:hover {
-    background-color: #c82333;
+button:hover {
+    background-color: #218838;
 }
-
-#total {
-    font-size: 20px;
+.eliminar {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 8px;
+    cursor: pointer;
+    border-radius: 50%;
     font-weight: bold;
-    color: #28a745;
+    margin-left: 10px;
 }
 
-#mensaje-confirmacion {
-    font-size: 18px;
-    color: green;
-    margin-top: 15px;
-    font-weight: bold;
+.eliminar:hover {
+    background-color: darkred;
 }

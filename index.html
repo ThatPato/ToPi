@@ -7,35 +7,76 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Menú de la Cafetería</h1>
-    <div id="menu">
-        <div class="item">
-            <span>Sandwich - $3.00</span>
-            <button onclick="agregarPedido('Sandwich', 3.00)">Agregar</button>
-        </div>
-        <div class="item">
-            <span>Jugo - $1.50</span>
-            <button onclick="agregarPedido('Jugo', 1.50)">Agregar</button>
-        </div>
-        <div class="item">
-            <span>Café - $2.00</span>
-            <button onclick="agregarPedido('Café', 2.00)">Agregar</button>
-        </div>
-    </div>
+
+    <header>
+        <h1>Menú de la Cafetería</h1>
+    </header>
+
+    <main>
+
+        <!-- Sección de Bebidas -->
+        <section class="menu-section">
+            <h2 onclick="toggleSection('bebidas')">Bebidas ▼</h2>
+            <ul id="bebidas" class="menu-items">
+                <li>Café Frío - $50.00 <button onclick="agregarPedido('Café Frío', 50.00)">Agregar</button></li>
+                <li>Agua 500ml - $10.00 <button onclick="agregarPedido('Agua 500ml', 10.00)">Agregar</button></li>
+                <li>Agua 1L - $20.00 <button onclick="agregarPedido('Agua 1L', 20.00)">Agregar</button></li>
+                <li>CocaCola 600ml - $25.00 <button onclick="agregarPedido('CocaCola 600ml', 25.00)">Agregar</button></li>
+            </ul>
+        </section>
+
+        <!-- Sección de Burritos -->
+        <section class="menu-section">
+            <h2 onclick="toggleSection('burritos')">Burritos ▼</h2>
+            <ul id="burritos" class="menu-items">
+                <li>Rojo - $25.00 <button onclick="agregarPedido('Burrito Rojo', 25.00)">Agregar</button></li>
+                <li>Verde - $25.00 <button onclick="agregarPedido('Burrito Verde', 25.00)">Agregar</button></li>
+                <li>Chicharrón - $25.00 <button onclick="agregarPedido('Burrito Chicharrón', 25.00)">Agregar</button></li>
+                <li>Winnie - $25.00 <button onclick="agregarPedido('Burrito Winnie', 25.00)">Agregar</button></li>
+            </ul>
+        </section>
+
+        <!-- Sección de Comida -->
+        <section class="menu-section">
+            <h2 onclick="toggleSection('comida')">Comida ▼</h2>
+            <ul id="comida" class="menu-items">
+                <li>Hamburguesa Carne - $45.00 <button onclick="agregarPedido('Hamburguesa Carne', 45.00)">Agregar</button></li>
+                <li>Hamburguesa Pollo - $45.00 <button onclick="agregarPedido('Hamburguesa Pollo', 45.00)">Agregar</button></li>
+                <li>Mini Pizza - $25.00 <button onclick="agregarPedido('Mini Pizza', 25.00)">Agregar</button></li>
+                <li>Calzone - $30.00 <button onclick="agregarPedido('Calzone', 30.00)">Agregar</button></li>
+            </ul>
+        </section>
+
+        <!-- Sección del Pedido -->
+        <section id="pedido">
+            <h2>Tu Pedido</h2>
+            <ul id="pedido-lista"></ul>
+            <p>Total: $<span id="total">0.00</span></p>
+            <button onclick="confirmarPedido()">Confirmar Pedido</button>
+            <p id="mensaje-confirmacion" style="display: none; font-weight: bold;"></p>
+        </section>
+
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="script.js"></script>
+
     
-    <h2>Tu Pedido</h2>
-    <ul id="pedido-lista"></ul>
-    <p>Total: $<span id="total">0.00</span></p>
-    <button onclick="confirmarPedido()">Confirmar Pedido</button>
-    <p id="mensaje-confirmacion" style="display: none; font-weight: bold;"></p>
-
-<!-- Importar Firebase versión compatible con scripts en el navegador -->
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
-
-<!-- Tu archivo script.js debe cargarse después de Firebase -->
-<script src="script.js"></script>
-
+    <script>
+        function toggleSection(id) {
+            let section = document.getElementById(id);
+            let title = section.previousElementSibling;
+            
+            if (section.style.maxHeight) {
+                section.style.maxHeight = null;
+                title.innerHTML = title.innerHTML.replace("▲", "▼");
+            } else {
+                section.style.maxHeight = section.scrollHeight + "px";
+                title.innerHTML = title.innerHTML.replace("▼", "▲");
+            }
+        }
+    </script>
 
 </body>
 </html>
