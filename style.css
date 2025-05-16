@@ -1,0 +1,105 @@
+body {
+  background-image: url('fondo.jpg');
+  background-size: cover;       
+  background-repeat: no-repeat; 
+  background-position: center;  
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+h2, h3 {
+    text-align: center;
+}
+
+input {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #3b3b3b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #000000;
+}
+
+.oculto {
+    display: none;
+}
+
+.menu .category {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.product-list {
+    list-style: none;
+    padding-left: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.product-list li {
+    padding: 8px;
+    background: #f9f9f9;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.product-list li:hover {
+    background: #e9ecef;
+}
+
+.product-list:not(.oculto) {
+    max-height: 500px; /* ajustable según número de productos */
+}
+
+.carrito ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.carrito li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.carrito li button {
+    background-color: #dc3545;
+    margin-left: 10px;
+}
+
+.carrito li button:hover {
+    background-color: #c82333;
+}
